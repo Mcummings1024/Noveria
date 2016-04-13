@@ -3,3 +3,7 @@ body {
 	font-family: quicksand, sans-serif;
 	font-weight: bolder;
 }
+
+.strike {
+	text-transform: line-through;
+}
