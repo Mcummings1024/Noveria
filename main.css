@@ -4,6 +4,37 @@ body {
 	font-weight: bolder;
 }
 
+p, li {
+	font-size: 18px;
+}
+
+nav div {
+	background-color: #01F;
+	color: #FFF;
+	font-size: 18px;
+	text-align: center;
+	padding: 10px;
+}
+
+nav div:hover {
+	background-color: #7171FF;
+}
+
 .strike {
-	text-transform: line-through;
+	text-decoration: line-through;
+}
+
+.header-text {
+	display: inline-block;
+	font-size: 48px;
+	margin: 30px 0;
+}
+
+.header-flag-div {
+	display: inline-block;
+	padding: 10px;
+}
+
+.header-flag {
+	width: 100%;
 }
