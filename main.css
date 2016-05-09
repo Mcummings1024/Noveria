@@ -9,6 +9,7 @@ p, li {
 }
 
 nav div {
+	width: 100%;
 	background-color: #01F;
 	color: #FFF;
 	font-size: 18px;
