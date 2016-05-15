@@ -9,7 +9,7 @@ p, li {
 }
 
 nav div {
-	width: 100%;
+	width: 200%;
 	background-color: #01F;
 	color: #FFF;
 	font-size: 18px;
@@ -19,6 +19,13 @@ nav div {
 
 nav div:hover {
 	background-color: #7171FF;
+}
+
+.clicked {
+	background-color: #FFF;
+	color: #01F;
+	height: 45px;
+	border: 1px solid #01F;
 }
 
 .strike {
@@ -38,4 +45,17 @@ nav div:hover {
 
 .header-flag {
 	width: 100%;
+}
+
+.col-lg-4 img {
+	width: auto;
+	height: 200px;
+}
+
+img {
+	border: 1px solid black;
+}
+
+textarea {
+	margin-bottom: 10px;
 }

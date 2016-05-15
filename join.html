@@ -1,0 +1,17 @@
+<h2>Become a citizen</h2>
+<p>Becoming a citizen of Noveria is a relatively simple process and anyone is eligible to become a citizen. Simply fill out and submit the below form, and you will receive an e-mail shortly confirming your citizenship.</p>
+
+<form validate class="simple-form">
+    <p>Name* <input type="text" ng-model="user.name" /></p><br />
+    <p>E-mail* <input type="email" ng-model="user.email" /></p><br />
+    <p>Location <input type="text" ng-model="user.location" /></p><br />
+    <p>Please list any other micronations you belong to:</p>
+    <textarea cols="50" rows="5" ng-model="user.micros"></textarea><br />
+    <p>I would like my territory added to the territory of Noveria: 
+    	<input type="radio" ng-model="user.gender" value="yes" />yes
+    	<input type="radio" ng-model="user.gender" value="no" />no<br />
+	</p>
+    <input type="button" ng-click="reset()" value="Reset" />
+    <input type="submit" ng-click="update(user)" value="Save" />
+</form>
+<p>* = required field</p>

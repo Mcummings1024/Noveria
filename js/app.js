@@ -30,7 +30,34 @@ app.config(function($routeProvider) {
 });
 
 app.controller('HomeController', function() {
+	var self = this;
 
+	self.navClicked = function(button) {
+		if(button === "home") {
+			document.getElementById("homeBtn").classList.add("clicked");
+			document.getElementById("factsBtn").classList.remove("clicked");
+			document.getElementById("aboutBtn").classList.remove("clicked");
+			document.getElementById("joinBtn").classList.remove("clicked");
+		}
+		else if(button === "facts") {
+			document.getElementById("homeBtn").classList.remove("clicked");
+			document.getElementById("factsBtn").classList.add("clicked");
+			document.getElementById("aboutBtn").classList.remove("clicked");
+			document.getElementById("joinBtn").classList.remove("clicked");
+		}
+		else if(button === "about") {
+			document.getElementById("homeBtn").classList.remove("clicked");
+			document.getElementById("factsBtn").classList.remove("clicked");
+			document.getElementById("aboutBtn").classList.add("clicked");
+			document.getElementById("joinBtn").classList.remove("clicked");
+		}
+		else {
+			document.getElementById("homeBtn").classList.remove("clicked");
+			document.getElementById("factsBtn").classList.remove("clicked");
+			document.getElementById("aboutBtn").classList.remove("clicked");
+			document.getElementById("joinBtn").classList.add("clicked");
+		}
+	};
 });
 
 app.controller('FactsController', function() {

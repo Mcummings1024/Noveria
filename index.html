@@ -4,29 +4,32 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="main.css">
-		<link rel="icon" href="/mg/favicon.ico">
+		<link rel="icon" href="img/favicon.ico">
 		<title>Noveria</title>
 	</head>
-	<body class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 header-flag-div">
-				<img src="img/nvcivilflag.jpg" class="header-flag">
+	<body class="container" ng-controller="HomeController as home">
+		<header>
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 header-flag-div">
+					<img src="img/nvcivilflag.jpg" class="header-flag">
+				</div>
+				<div class="header-text col-lg-9 col-md-9 col-sm-9 col-xs-9">	
+					<h1>Noveria</h1>
+					<h2>UNDER CONSTRUCTION</h2>
+				</div>
 			</div>
-			<div class="header-text col-lg-9 col-md-9 col-sm-9 col-xs-9">	
-				<h1>Noveria</h1>
-				<h2>UNDER CONSTRUCTION</h2>
-			</div>
-		</div>
-		<nav class="row">
-			<a href = "#/"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Home</div></a>
-			<a href = "#/facts"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Fast Facts</div></a>
-			<a href = "#/about"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">About Noveria</div></a>
-			<a href = "#/join"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">Citizenship</div></a>
-		</nav>	
+			<nav class="row">
+				<a href = "#/"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="homeBtn" ng-click="home.navClicked('home')">Home</div></a>
+				<a href = "#/facts"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="factsBtn" ng-click="home.navClicked('facts')">Fast Facts</div></a>
+				<a href = "#/about"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="aboutBtn" ng-click="home.navClicked('about')">About Noveria</div></a>
+				<a href = "#/join"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="joinBtn" ng-click="home.navClicked('join')">Citizenship</div></a>
+			</nav>
+		</header>	
 		<p></p>
 		<ng-view></ng-view>
+		<footer>©2016 <a href="matthewcummings.co">Matthew Cummings</a></footer>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 		<script type="text/javascript" src="https://code.angularjs.org/1.5.3/angular-route.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="/js/app.js"></script>
 	</body>
 </html>
