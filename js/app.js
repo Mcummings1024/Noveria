@@ -68,8 +68,14 @@ app.controller('AboutController', function() {
 
 });
 
-app.controller('JoinController', function() {
+app.controller('JoinController', function($scope) {
+	$scope.sendMail() = function() {
+    	var link = "mailto:noverianfederation@gmail.com"
+            + "&subject=" + escape("New Citizen Request") + "&body=" + escape($scope.user.name + " (" + $scope.user.email + ") from " 
+            + $scope.user.location + " wishes to become a citizen of Noveria. " + $scope.user.name + " also belongs to " + $scope.user.micros + ".");
 
+    	window.location.href = link;
+	}
 });
 
 app.controller('WhoopsController', function() {
