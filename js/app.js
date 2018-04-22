@@ -1,28 +1,28 @@
 var app = angular.module('noveriaApp', ['ngRoute']);
 	
 app.config(function($routeProvider) {
-	$routeProvider.when('/',
+	$routeProvider.when('Noveria/',
 	{
 		controller: 'HomeController',
 		templateUrl: 'home.html'
 	});
-	$routeProvider.when('/#!/#%2Ffacts',
+	$routeProvider.when('Noveria/#!/#%2Ffacts',
 	{
 		controller: 'FactsController',
 		templateUrl: 'facts.html'
 	});
-	$routeProvider.when('/#!/#%2Fabout',
+	$routeProvider.when('Noveria/#!/#%2Fabout',
 	{
 		controller: 'AboutController',
 		templateUrl: 'about.html'
 	});
-	$routeProvider.when('/#!/#%2Fquiz',
+	$routeProvider.when('Noveria/#!/#%2Fquiz',
 	{
 		controller: 'QuizController',
 		controllerAs: 'quiz',
 		templateUrl: 'quiz.html'
 	});
-	$routeProvider.when('/#!/#%2Fjoin',
+	$routeProvider.when('Noveria/#!/#%2Fjoin',
 	{
 		controller: 'JoinController',
 		templateUrl: 'join.html'
