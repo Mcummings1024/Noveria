@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="noveriaApp">
 	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link href="./open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="main.css">
 		<link rel="icon" href="img/favicon.ico">
 		<title>Noveria</title>
@@ -10,24 +13,24 @@
 	<body class="container" ng-controller="HomeController as home">
 		<header>
 			<div class="row">
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 header-flag-div">
+				<div class="col-3 header-flag-div">
 					<img src="img/nvcivilflag.jpg" class="header-flag">
 				</div>
-				<div class="header-text col-lg-9 col-md-9 col-sm-9 col-xs-9">	
-					<h1>Noveria</h1>
-					<h2>UNDER CONSTRUCTION</h2>
+				<div class="col-9 header-text">
+					<h1>The Republic of Noveria</h1>
 				</div>
 			</div>
 			<nav class="row">
-				<a href = "#/"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="homeBtn" ng-click="home.navClicked('home')">Home</div></a>
-				<a href = "#/facts"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="factsBtn" ng-click="home.navClicked('facts')">Fast Facts</div></a>
-				<a href = "#/about"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="aboutBtn" ng-click="home.navClicked('about')">About Noveria</div></a>
-				<a href = "#/join"><div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="joinBtn" ng-click="home.navClicked('join')">Citizenship</div></a>
+				<a id="homeBtn" class="col" href="#/" ng-click="home.navClicked('home')">Home</a>
+				<a id="factsBtn" class="col" href="#/facts" ng-click="home.navClicked('facts')">Stats</a>
+				<a id="aboutBtn" class="col" href="#/about" ng-click="home.navClicked('about')">About</a>
+				<a id="quizBtn" class="col" href="#/quiz" ng-click="home.navClicked('quiz')">Political&nbsp;Quiz</a>
+				<a id="joinBtn" class="col" href="#/join" ng-click="home.navClicked('join')">Citizenship</a>
 			</nav>
-		</header>	
-		<p></p>
+		</header>
+		<p class="row alert alert-warning">Note: This website is currently under construction.</p>
 		<ng-view></ng-view>
-		<footer>©2016 <a href="matthewcummings.co">Matthew Cummings</a></footer>
+		<footer>&copy;2016 - {{home.currentYear}} <a href="matthewcummings.co">Matthew Cummings</a></footer>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 		<script type="text/javascript" src="https://code.angularjs.org/1.5.3/angular-route.min.js"></script>
 		<script type="text/javascript" src="/js/app.js"></script>

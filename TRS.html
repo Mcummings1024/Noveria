@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Referendum Service | Noveria Web-Portal</title>
+        <meta name="viewport" content="width=device-width,initial-scale=0.8" />
+        <link rel="stylesheet" href="main.css" async />
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' defer />
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Mono' rel='stylesheet' type='text/css' defer />
+        <style>
+            #bgimg { background-position: 21% 19%; }
+        </style>
+        <script src="js/app.js" defer></script>
+        <script type="text/javascript">
+            function voteHelp(e)
+            {
+                var voted = [-1, -1, -1, -1];
+                var els = document.getElementsByClassName("vin");
+                var vn = 0;
+                //Find currently selected candidates
+                for (var i = 0; i < els.length; i++)
+                {
+                    if (els[i].checked)
+                    {
+                        voted[vn++] = els[i].value;
+                    }
+                }
+                //Highdark already selected candidates
+                var thisRound = Array(els.length);
+                for (var i = 0; i < els.length; i++)
+                {
+                    for (var n = 0; n < 4; n++)
+                    {
+                        if (els[i].value === voted[n] && !els[i].checked) {
+                            els[i].className = "vin already";
+                            thisRound[i] = true;
+                            break;
+                        }
+                        else if (!thisRound[i]) {
+                            els[i].className = "vin";
+                        }
+                    }
+                }
+            }
+
+            function voteFollow(e)
+            {
+                var v = e.innerHTML.split(">")[1].split("<")[0];
+                var els = document.getElementsByClassName("cvote");
+                for (var i = 0; i < els.length; i++)
+                {
+                    //Votes are either class="abovebar cvote" or class="belowbar cvote", to class="x y following"
+                    var sV = els[i].className.split(" ");
+                    if (els[i].innerHTML == v) {
+                        els[i].className = sV[0] + " " + sV[1] + " following";
+                    } else {
+                        els[i].className = sV[0] + " " + sV[1];
+                    }
+                }
+            }
+
+            var clock;
+
+            function refCountDown()
+            {
+                var ts = document.getElementsByClassName("refClock");
+                for (var t = 0; t < ts.length; t++)
+                {
+                    clock = ts[t].innerHTML.split(":");
+                    clock[3] = clock[3].split(" ")[0];
+                    clock[3]--;
+                    if (clock[3] == -1) { clock[2]--; clock[3] = 59; }
+                    if (clock[2] == -1) { clock[1]--; clock[2] = 59; }
+                    if (clock[1] == -1) { clock[0]--; clock[1] = 23; }
+                    if (clock[0] == -1) { clearInterval(clock); return; }
+                    if (clock[0] < 10) { clock[0] = "0" + parseInt(clock[0]); }
+                    if (clock[1] < 10) { clock[1] = "0" + parseInt(clock[1]); }
+                    if (clock[2] < 10) { clock[2] = "0" + parseInt(clock[2]); }
+                    if (clock[3] < 10) { clock[3] = "0" + parseInt(clock[3]); }
+                    ts[t].innerHTML = clock.join(":");
+                }
+            }
+
+            clock = setInterval(refCountDown, 1000);
+        </script>
+    </head>
+    <body>
+        <div id="bgimg"></div>
+        <div id="header">
+            <a title="Go home" href="home"><img id="flag" /></a>
+            <h1>Noveria Web-Portal</h1>
+            <h2>Home</h2>
+            <nav id="navbar">
+                <li><a title="The Citizens' social platform; 1 message today" class="" href="">Citizen Space<span class="badge">1</span></a></li>
+                <li><a title="Gallery of images from around Noveria" class="" href="">Gallery</a></li>
+                <li><a title="Citizenship applications and other tasks" class="" href="">Citizen Warrant Service</a></li>
+                <li><a title="All referendums and elections; 3 active referenda" class="" href="TRS">Referendum Service<span class="badge">3</span></a></li>
+                <li><a title="The central body of governance" class="" href="">Senate</a></li>
+                <li><a title="All state and social currency ''wealth''" class="" href="">Treasury</a></li>
+                <li><a title="Information on the physical realms of Noveria" class="" href="">Area Conservatory</a></li>
+                <li><a title="Policing and national guard" class="" href="">Guard</a></li>
+                <li><a title="The service which develops this website and more" class="" href="">Technology Service</a></li>
+                <li><a title="Centre of justice within Noveria" class="" href="TC">Court</a></li>
+            </nav>
+            <nav id="mobileNavbar" style="display: none;">
+                <a style="visibility: hidden;" href="">◀</a>
+                <select onchange="window.location = this.options[this.selectedIndex].value;">
+                    <option value="home">Home</option>
+                    <option value="CS">Cit' Space [1]</option>
+                    <option value="">Gallery</option>
+                    <option value="">Cit' Warrant Service</option>
+                    <option value="TRS">Ref' Service [3]</option>
+                    <option value="">Senate</option>
+                    <option value="">Treasury</option>
+                    <option value="">Area Conservatory</option>
+                    <option value="">Guard</option>
+                    <option value="">Technology Service</option>
+                    <option value="">Court</option>
+                </select>
+                <a href="TRS">▶</a>
+            </nav>        
+        </div>
+        <span id="etime">09:02:46 UTC</span>
+        <p>The Referendum Service is a State organisation which hosts all voting. It is an important part of being an Eodusian&mdash;the right to vote in most matters of the micronation, by use of Definitely Direct Democracy. The Senate use Definitely Direct Democracy Referendums (DDDR's) to amend the protected amendments of the Constitution. Voting is anonymous by design, while remaining transparent. It uses secure hashing to ensure you can change your vote up to the referendum closure, while not revealing identity.</p>
+        <p>If you are a Citizen wishing to have something debated in the Senate, and potentially result in a DDDR, simply post a message to the <a href=""><!--href="CS"-->Citizen Forum</a>! Already, several requests have made it onto the agendas of Senators, both through the Forum and in person.</p>
+        <section class="s2">
+            <h3>Current referenda (4)</h3>
+            <div class="padd refs">
+                <a href="">
+                    <div class="STV ref pending" style="background:linear-gradient(to right,rgba(170,170,255,1),rgba(170,170,255,1) 51.8%,rgba(170,170,255,.32) 51.8%) no-repeat;">
+                        <p>19-07-2016: <b>(SE) International Province Third Senate Election</b></p>11 votes, 44% turnout, 
+                        <div class="refClock">03:14:57:15</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY ref pending" style="background:linear-gradient(to right,rgba(170,255,170,1),rgba(170,255,170,1) 23.2%,rgba(170,255,170,.32) 23.2%) no-repeat;">
+                        <p>17-07-2016: <b>(DDDR) Popular vote for Head Senator</b></p>13 votes, 52% turnout, 
+                        <div class="refClock">01:14:57:15</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY ref pending" style="background:linear-gradient(to right,rgba(170,255,170,1),rgba(170,255,170,1) 8.9%,rgba(170,255,170,.32) 8.9%) no-repeat;">
+                        <p>16-07-2016: <b>(DDDR) Removal of Citizen power within the Senate</b></p>14 votes, 56% turnout, 
+                        <div class="refClock">00:14:57:15</div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY ref pending" style="background:linear-gradient(to right,rgba(170,255,170,1),rgba(170,255,170,1) -5.4%,rgba(170,255,170,.32) -5.4%) no-repeat;">
+                        <p>15-07-2016: <b>(DDDR) Annexation of the Province of View</b></p>12 votes, 48% turnout, 
+                        <div class="refClock">00:09:2:45</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="s2">
+            <h3>Past referenda (26)</h3>
+            <div class="padd refs">
+                <a href="">
+                    <div class="PLURALITY oldref pending"><p>14-07-2016: <b>(DDDR) Citizen taxation</b></p>12 votes, 48% turnout, yesterday</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref pending"><p>13-07-2016: <b>(DDDR) Proposed change of 2§4 to include incumbent duties</b></p>12 votes, 50% turnout, 2 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref installed"><p>25-06-2016: <b>(DDDR) 4+ instead of 4 Senators</b></p>10 votes, 62% turnout, 20 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref installed"><p>24-06-2016: <b>(DDDR) Anonymous voting as a right</b></p>10 votes, 62% turnout, 21 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref installed"><p>23-06-2016: <b>(DDDR) Remove trigger for Senate election</b></p>10 votes, 62% turnout, 22 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref failed"><p>22-06-2016: <b>(DDDR) DDR-locked Acts</b> 10 votes, 62% turnout, 23 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref installed"><p>21-06-2016: <b>(DDDR) Service Exclusive Powers</b> 10 votes, 62% turnout, 24 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="PLURALITY oldref installed"><p>14-06-2016: <b>(DDDR) Concurrent DDDR's</b> 10 votes, 66% turnout, 31 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="STV oldref installed"><p>06-06-2016: <b>(SE) International Province Senator Election</b> 11 votes, 84% turnout, 39 days ago</p></div>
+                </a>
+                <a href="">
+                    <div class="STV oldref installed"><p>04-04-2016: <b>(SE) International Province Senator Election</b> 5 votes, 100% turnout, 102 days ago</p></div>
+                </a>
+            </div>
+        </section>
+    </body>
+</html>

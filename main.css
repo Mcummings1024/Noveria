@@ -1,45 +1,63 @@
 body {
 	margin: auto;
 	font-family: quicksand, sans-serif;
-	font-weight: bolder;
+	font-weight: bold;
 }
 
 p, li {
 	font-size: 18px;
 }
 
-nav div {
-	width: 200%;
-	background-color: #01F;
-	color: #FFF;
-	font-size: 18px;
-	text-align: center;
-	padding: 10px;
+img {
+	border: 1px solid black;
 }
 
-nav div:hover {
-	background-color: #7171FF;
+textarea, nav {
+	margin-bottom: 10px;
+}
+
+footer {
+	position: relative;
+	bottom: 0px;
+}
+
+nav a {
+	background-color: #01f;
+	color: #fff;
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	text-align: center;
+}
+
+nav a:hover {
+	color: #fff;
+	background-color: #7171ff;
+	text-decoration: none;
 }
 
 .clicked {
-	background-color: #FFF;
-	color: #01F;
-	height: 45px;
-	border: 1px solid #01F;
+	background-color: #fff;
+	color: #01f;
+	border: 1px solid #01f;
 }
 
-.strike {
-	text-decoration: line-through;
+.col > img {
+    max-width: 100%;
+    max-height: 237px;
 }
 
 .header-text {
-	display: inline-block;
-	font-size: 48px;
-	margin: 30px 0;
+    display: table;
+}
+
+.header-text h1 {
+	display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .header-flag-div {
-	display: inline-block;
 	padding: 10px;
 }
 
@@ -47,15 +65,50 @@ nav div:hover {
 	width: 100%;
 }
 
-.col-lg-4 img {
-	width: auto;
-	height: 200px;
+.question {
+	height: 100px;
+	margin: 30px 0;
 }
 
-img {
-	border: 1px solid black;
+.score {
+	margin-top: 10px;
 }
 
-textarea {
-	margin-bottom: 10px;
+.strike {
+	text-decoration: line-through;
+}
+
+/* Bootstrap Overrides */
+.btn-primary {
+	border-color: #01f;
+	background-color: #01f;
+}
+
+.btn-primary:hover {
+	background-color: #44f;
+}
+
+.btn-secondary {
+	color: #000;
+	background-color: #ddd;
+}
+
+.btn-secondary.active {
+	color: #fff;
+}
+
+.btn-group {
+	margin: 0 10px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+	.btn-group {
+		display: block;
+	}
+
+	nav a {
+		display: block;
+		width: 100%;
+	}
 }
