@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="noveriaApp">
 	<head>
-		<link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css'>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<link href="./open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="main.css">
-		<link rel="icon" href="img/favicon.ico">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" type="text/javascript"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" type="text/javascript"></script>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script type="text/javascript" src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<link href='https://fonts.googleapis.com/css?family=Quicksand:700' rel='stylesheet' type='text/css' />
+		<link href="main.css" rel="stylesheet" type="text/css" />
+		<link rel="icon" href="img/favicon.ico" />
 		<title>Noveria</title>
 	</head>
 	<body class="container" ng-controller="HomeController as home">
@@ -17,7 +20,7 @@
 					<img src="img/nvcivilflag.jpg" class="header-flag">
 				</div>
 				<div class="col-9 header-text">
-					<h1>The Republic of Noveria</h1>
+					<h1>The People's Buddhist Republic of Noveria</h1>
 				</div>
 			</div>
 			<nav class="row">
@@ -31,8 +34,5 @@
 		<p class="row alert alert-warning">Note: This website is currently under construction.</p>
 		<ng-view></ng-view>
 		<footer>&copy;2016 - {{home.currentYear}} <a href="matthewcummings.co">Matthew Cummings</a></footer>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
-		<script type="text/javascript" src="https://code.angularjs.org/1.5.3/angular-route.min.js"></script>
-		<script type="text/javascript" src="/js/app.js"></script>
 	</body>
 </html>
