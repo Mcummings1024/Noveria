@@ -6,23 +6,23 @@ app.config(function($routeProvider) {
 		controller: 'HomeController',
 		templateUrl: 'home.html'
 	});
-	$routeProvider.when('/facts',
+	$routeProvider.when('/#!/#%2Ffacts',
 	{
 		controller: 'FactsController',
 		templateUrl: 'facts.html'
 	});
-	$routeProvider.when('/about',
+	$routeProvider.when('/#!/#%2Fabout',
 	{
 		controller: 'AboutController',
 		templateUrl: 'about.html'
 	});
-	$routeProvider.when('/quiz',
+	$routeProvider.when('/#!/#%2Fquiz',
 	{
 		controller: 'QuizController',
 		controllerAs: 'quiz',
 		templateUrl: 'quiz.html'
 	});
-	$routeProvider.when('/join',
+	$routeProvider.when('/#!/#%2Fjoin',
 	{
 		controller: 'JoinController',
 		templateUrl: 'join.html'
