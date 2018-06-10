@@ -3,7 +3,7 @@ var app = angular.module('noveriaApp', ['ui.router']);
 app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
     	$rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
-	//$state.go('home');
+	$state.go('home');
 }]);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
