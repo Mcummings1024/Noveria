@@ -16,22 +16,22 @@ app.config(function ($stateProvider) {
 		template: 'about.html',
 		controller: 'AboutController'
 	})
-	.when('quiz', {
+	.state('quiz', {
 		url: '/quiz',
 		template: 'quiz.html',
 		controller: 'QuizController',
 		controllerAs: 'quiz'
 	})
-	.when('/join', {
+	.state('/join', {
 		url: '/join',
 		controller: 'JoinController',
 		template: 'join.html'
-	})
-	.otherwise({ 
-		redirectTo: '/',
-		//controller: 'WhoopsController',
-		//templateUrl: '404.html' 
 	});
+	//.otherwise({ 
+	//	redirectTo: '/',
+	//	controller: 'WhoopsController',
+	//	templateUrl: '404.html' 
+	//});
 });
 
 app.controller('HomeController', function () {
