@@ -2,7 +2,7 @@ var app = angular.module('noveriaApp', ['ui.router']);
 	
 app.config(function ($stateProvider) {
 	$stateProvider.state('home', {
-		url: '/home',
+		url: '/',
 		templateUrl: 'http://mcummings1024.github.io/Noveria/home.html',
 		controller: 'HomeController'
 	})
@@ -209,3 +209,7 @@ app.controller('JoinController', function ($scope) {
 });
 
 app.controller('WhoopsController', function () {});
+
+$(document).ready(function () {
+    $state.go('home');
+});
