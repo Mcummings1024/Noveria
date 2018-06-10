@@ -2,30 +2,30 @@ var app = angular.module('noveriaApp', ['ui.router']);
 	
 app.config(function ($stateProvider) {
 	$stateProvider.state('home', {
-		url: "/",
-		template: 'home.html',
+		url: '/',
+		templateUrl: 'home.html',
 		controller: 'HomeController'
 	})
 	.state('facts', {
-		url: "/facts",
-		template: 'facts.html',
+		url: '/facts',
+		templateUrl: 'facts.html',
 		controller: 'FactsController'
 	})
 	.state('about', {
 		url: '/about',
-		template: 'about.html',
+		templateUrl: 'about.html',
 		controller: 'AboutController'
 	})
 	.state('quiz', {
 		url: '/quiz',
-		template: 'quiz.html',
+		templateUrl: 'quiz.html',
 		controller: 'QuizController',
 		controllerAs: 'quiz'
 	})
-	.state('/join', {
+	.state('join', {
 		url: '/join',
-		controller: 'JoinController',
-		template: 'join.html'
+		templateUrl: 'join.html',
+		controller: 'JoinController'
 	});
 	//.otherwise({ 
 	//	redirectTo: '/',
