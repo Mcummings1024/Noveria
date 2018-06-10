@@ -1,6 +1,6 @@
 var app = angular.module('noveriaApp', ['ui.router']);
 	
-app.config(function ($stateProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
 		url: '/',
 		templateUrl: 'http://mcummings1024.github.io/Noveria/home.html',
@@ -27,11 +27,8 @@ app.config(function ($stateProvider) {
 		templateUrl: 'join.html',
 		controller: 'JoinController'
 	});
-	//.otherwise({ 
-	//	redirectTo: '/',
-	//	controller: 'WhoopsController',
-	//	templateUrl: '404.html' 
-	//});
+	
+	$urlRouterProvider.otherwise('/');
 });
 
 app.controller('HomeController', function () {
