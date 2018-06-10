@@ -1,27 +1,31 @@
 var app = angular.module('noveriaApp', ['ngRoute'])
 	
-.config(function ($routeProvider) {
-	$routeProvider.when('/', {
-		controller: 'HomeController',
-		templateUrl: 'home.html'
+.config(function ($stateProvider) {
+	$stateProvider.state('home', {
+		url: "/",
+		template: 'home.html',
+		controller: 'HomeController'
 	})
-	.when('#/facts',
-	{
-		controller: 'FactsController',
-		templateUrl: 'facts.html'
+	.state('facts', {
+		url: "/facts",
+		template: 'facts.html',
+		controller: 'FactsController'
 	})
-	.when('/#/about', {
-		controller: 'AboutController',
-		templateUrl: 'about.html'
+	.state('about', {
+		url: '/about',
+		template: 'about.html',
+		controller: 'AboutController'
 	})
-	.when('/#quiz', {
+	.when('quiz', {
+		url: '/quiz',
+		template: 'quiz.html',
 		controller: 'QuizController',
-		controllerAs: 'quiz',
-		templateUrl: 'quiz.html'
+		controllerAs: 'quiz'
 	})
 	.when('/join', {
+		url: '/join',
 		controller: 'JoinController',
-		templateUrl: 'join.html'
+		template: 'join.html'
 	})
 	.otherwise({ 
 		redirectTo: '/',
@@ -30,12 +34,12 @@ var app = angular.module('noveriaApp', ['ngRoute'])
 	});
 });
 
-app.controller('HomeController', function() {
+app.controller('HomeController', function () {
 	var self = this;
 
 	self.currentYear = (new Date()).getFullYear();
 
-	self.navClicked = function(button) {
+	self.navClicked = function (button) {
 		if (button === "home") {
 			$("#homeBtn").addClass("clicked");
 			$("#factsBtn").removeClass("clicked");
@@ -70,11 +74,11 @@ app.controller('HomeController', function() {
 	};
 });
 
-app.controller('FactsController', function() {});
+app.controller('FactsController', function () {});
 
-app.controller('AboutController', function() {});
+app.controller('AboutController', function () {});
 
-app.controller('QuizController', function($scope) {
+app.controller('QuizController', function ($scope) {
 	var self = $scope;
 
 	self.questions = [
@@ -119,7 +123,7 @@ app.controller('QuizController', function($scope) {
 	self.index = 0;
 	self.score = [0, 0];
 	
-	self.next = function() {
+	self.next = function () {
 		if (self.index < self.questions.length - 1) {
 			var prevChoiceBtn = '#choice' + self.questions[self.index].choice;
 
@@ -132,7 +136,7 @@ app.controller('QuizController', function($scope) {
 		}
 	};
 
-	self.prev = function() {
+	self.prev = function () {
 		if (self.index !== 0) {
 			if (self.index < self.questions.length - 1) {
 				var prevChoiceBtn = '#choice' + self.questions[self.index].choice;
@@ -146,11 +150,11 @@ app.controller('QuizController', function($scope) {
 		}
 	};
 
-	self.setScore = function(value) {
+	self.setScore = function (value) {
 		self.questions[self.index].choice = value;
 	};
 
-	self.total = function() {
+	self.total = function () {
 		self.questions.forEach(function(question) {
 			if (question.axis === 'e') {
 				self.score[0] += question.direction * question.choice;
@@ -164,7 +168,7 @@ app.controller('QuizController', function($scope) {
 		drawChart();
 	};
 
-	var drawChart = function() {
+	var drawChart = function () {
 		$('canvas').show();
 		
 		var canvas = document.getElementById('canvas');
@@ -184,7 +188,7 @@ app.controller('QuizController', function($scope) {
 		ctx.fill();
 	};
 
-	self.reset = function() {
+	self.reset = function () {
 		self.index = 0;
 		self.showScore = false;
 		$('canvas').hide();
@@ -192,7 +196,7 @@ app.controller('QuizController', function($scope) {
 	};
 });
 
-app.controller('JoinController', function($scope) {
+app.controller('JoinController', function ($scope) {
 	$scope.message = "join";
 	$scope.sendMail = function () {
 		var link = "mailto:noverianfederation@gmail.com" + 
@@ -204,4 +208,4 @@ app.controller('JoinController', function($scope) {
 	};
 });
 
-app.controller('WhoopsController', function() {});
+app.controller('WhoopsController', function () {});
