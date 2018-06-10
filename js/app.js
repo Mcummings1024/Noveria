@@ -2,8 +2,8 @@ var app = angular.module('noveriaApp', ['ui.router']);
 	
 app.config(function ($stateProvider) {
 	$stateProvider.state('home', {
-		url: '/',
-		templateUrl: 'home.html',
+		url: '/home',
+		templateUrl: 'http://mcummings1024.github.io/Noveria/home.html',
 		controller: 'HomeController'
 	})
 	.state('facts', {
