@@ -1,4 +1,4 @@
-var app = angular.module('noveriaApp', ['ngRoute']);
+var app = angular.module('noveriaApp', ['ui.router']);
 	
 app.config(function ($stateProvider) {
 	$stateProvider.state('home', {
