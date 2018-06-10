@@ -1,3 +1,7 @@
+html, body { 
+	height: 100%; 
+}
+
 body {
 	margin: auto;
 	font-family: quicksand, sans-serif;
@@ -9,7 +13,7 @@ p, li {
 }
 
 img {
-	border: 1px solid black;
+	border: 1px solid #000;
 }
 
 textarea, nav {
@@ -22,7 +26,7 @@ footer {
 }
 
 nav a {
-	background-color: #01f;
+	background-color: #f10;
 	color: #fff;
 	height: 45px;
 	line-height: 45px;
@@ -31,15 +35,15 @@ nav a {
 }
 
 nav a:hover {
-	color: #fff;
-	background-color: #7171ff;
+	color: #ea0;
+	background-color: #e52619;
 	text-decoration: none;
 }
 
 .clicked {
 	background-color: #fff;
-	color: #01f;
-	border: 1px solid #01f;
+	color: #f10;
+	border: 1px solid #f10;
 }
 
 .col > img {
@@ -53,8 +57,8 @@ nav a:hover {
 
 .header-text h1 {
 	display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+	vertical-align: middle;
+    	text-align: center;
 }
 
 .header-flag-div {
@@ -80,8 +84,8 @@ nav a:hover {
 
 /* Bootstrap Overrides */
 .btn-primary {
-	border-color: #01f;
-	background-color: #01f;
+	border-color: #f10;
+	background-color: #f10;
 }
 
 .btn-primary:hover {
