@@ -1,6 +1,6 @@
-var app = angular.module('noveriaApp', ['ngRoute'])
+var app = angular.module('noveriaApp', ['ngRoute']);
 	
-.config(function ($stateProvider) {
+app.config(function ($stateProvider) {
 	$stateProvider.state('home', {
 		url: "/",
 		template: 'home.html',
@@ -202,7 +202,7 @@ app.controller('JoinController', function ($scope) {
 		var link = "mailto:noverianfederation@gmail.com" + 
 		    	   "&subject=" + escape("New Citizen Request") + 
 		    	   "&body=" + escape($scope.user.name + " (" + $scope.user.email + ") from " + $scope.user.location + 
-			   " wishes to become a citizen of Noveria. " + $scope.user.name + " also belongs to " + $scope.user.micros + ".";
+			   " wishes to become a citizen of Noveria. " + $scope.user.name + " also belongs to " + $scope.user.micros + ".");
 		console.log("test test");
     		window.location.href = link;
 	};
