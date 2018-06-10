@@ -9,7 +9,7 @@ app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $
 app.config(function ($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
 		url: '/',
-		templateUrl: 'http://mcummings1024.github.io/Noveria/home.html',
+		templateUrl: 'home.html',
 		controller: 'HomeController'
 	})
 	.state('facts', {
