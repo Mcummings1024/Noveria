@@ -206,7 +206,3 @@ app.controller('JoinController', function ($scope) {
 });
 
 app.controller('WhoopsController', function () {});
-
-$(document).ready(function () {
-    $state.go('home');
-});
