@@ -53,12 +53,13 @@ nav a:hover {
 
 .header-text {
     display: table;
+    margin-bottom: 5px;
 }
 
 .header-text h1 {
 	display: table-cell;
 	vertical-align: middle;
-    	text-align: center;
+    text-align: center;
 }
 
 .header-flag-div {

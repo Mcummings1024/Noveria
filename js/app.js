@@ -1,7 +1,7 @@
 var app = angular.module('noveriaApp', ['ui.router']);
 
 app.run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
-    	$rootScope.$state = $state;
+    $rootScope.$state = $state;
 	$rootScope.$stateParams = $stateParams;
 	$state.go('home');
 }]);
@@ -77,9 +77,9 @@ app.controller('HomeController', function () {
 	};
 });
 
-app.controller('FactsController', function () {});
+app.controller('FactsController', function ($scope) {});
 
-app.controller('AboutController', function () {});
+app.controller('AboutController', function ($scope) {});
 
 app.controller('QuizController', function ($scope) {
 	var self = $scope;
@@ -131,9 +131,6 @@ app.controller('QuizController', function ($scope) {
 			var prevChoiceBtn = '#choice' + self.questions[self.index].choice;
 
 			self.index++;
-			
-			$(prevChoiceBtn).removeClass('active');
-			$('#choice' + self.questions[self.index].choice).addClass('active');
 		} else if (self.index === self.questions.length - 1) {
 			self.index++;
 		}
@@ -141,15 +138,7 @@ app.controller('QuizController', function ($scope) {
 
 	self.prev = function () {
 		if (self.index !== 0) {
-			if (self.index < self.questions.length - 1) {
-				var prevChoiceBtn = '#choice' + self.questions[self.index].choice;
-			
-				self.index--;
-				$(prevChoiceBtn).removeClass('active');
-				$('#choice' + self.questions[self.index].choice).addClass('active');
-			} else {
-				self.index--;
-			}
+			self.index--;
 		}
 	};
 
@@ -187,7 +176,7 @@ app.controller('QuizController', function ($scope) {
 		ctx.fillStyle = 'rgb(50, 50, 50)';
 		ctx.fillRect(0, 249, 500, 3);
 		ctx.fillRect(249, 0, 3, 500);
-		ctx.arc(self.score[0] + 250, self.score[1] + 250, 10, 0, 2 * Math.PI);
+		ctx.arc(7 * self.score[0] + 250, -7 * self.score[1] + 250, 10, 0, 2 * Math.PI);
 		ctx.fill();
 	};
 

@@ -1,50 +1,33 @@
 <p ng-show="index !== questions.length">Question {{index + 1}} of {{questions.length}}:</p>
 <div class="row question justify-content-center" ng-show="index !== questions.length">
-	<h3>{{questions[index].question}}</h3>
+	<p>{{questions[index].question}}</p>
 </div>
 <div class="row justify-content-center" ng-show="index === questions.length"><h3>End of quiz!</h3></div>
 <div class="row justify-content-center">
+	<div class="btn-group btn-group-vertical btn-group-toggle" data-toggle="buttons" ng-show="index !== questions.length">
+		<label class="btn btn-secondary" ng-click="setScore(2)">
+			<input type="radio" id="choice2"> Strongly Agree
+		</label>
+		<label class="btn btn-secondary" ng-click="setScore(1)">
+			<input type="radio" id="choice1"> Agree
+		</label>
+		<label class="btn btn-secondary active" ng-click="setScore(0)">
+			<input type="radio" id="choice0" checked> Neutral
+		</label>
+		<label class="btn btn-secondary" ng-click="setScore(-1)">
+			<input type="radio" id="choice-1"> Disagree
+		</label>
+		<label class="btn btn-secondary" ng-click="setScore(-2)">
+			<input type="radio" id="choice-2"> Strongly Disagree
+		</label>
+	</div>
 	<button class="btn btn-dark" ng-click="prev()" ng-show="!showScore">
-		<span class="oi oi-chevron-left"></span>
+		<span class="oi oi-chevron-left"><</span>
 	</button>
-	<div class="options btn-group" data-toggle="buttons" ng-show="index !== questions.length">
-		<label class="btn btn-secondary" id="choice2" ng-click="setScore(2)">
-			<input type="radio"> Strongly Agree
-		</label>
-		<label class="btn btn-secondary" id="choice1" ng-click="setScore(1)">
-			<input type="radio"> Agree
-		</label>
-		<label class="btn btn-secondary active" id="choice0" ng-click="setScore(0)">
-			<input type="radio"> Neutral
-		</label>
-		<label class="btn btn-secondary" id="choice-1" ng-click="setScore(-1)">
-			<input type="radio"> Disagree
-		</label>
-		<label class="btn btn-secondary" id="choice-2" ng-click="setScore(-2)">
-			<input type="radio"> Strongly Disagree
-		</label>
-	</div>
-	<div class="btn-group-vertical" data-toggle="buttons" ng-show="index !== questions.length">
-		<label class="btn btn-secondary" id="choice2" ng-click="setScore(2)">
-			<input type="radio"> Strongly Agree
-		</label>
-		<label class="btn btn-secondary" id="choice1" ng-click="setScore(1)">
-			<input type="radio"> Agree
-		</label>
-		<label class="btn btn-secondary active" id="choice0" ng-click="setScore(0)">
-			<input type="radio"> Neutral
-		</label>
-		<label class="btn btn-secondary" id="choice-1" ng-click="setScore(-1)">
-			<input type="radio"> Disagree
-		</label>
-		<label class="btn btn-secondary" id="choice-2" ng-click="setScore(-2)">
-			<input type="radio"> Strongly Disagree
-		</label>
-	</div>
 	<button class="btn btn-dark btn-group" id="resetBtn" ng-click="reset()" ng-show="showScore && index === questions.length">Start Over</button>
 	<button class="btn btn-success btn-group" id="resultsBtn" ng-click="total()" ng-show="!showScore && index === questions.length">Get Results</button>
 	<button class="btn btn-dark" ng-click="next()" ng-show="!showScore">
-		<span class="oi oi-chevron-right"></span>
+		<span class="oi oi-chevron-right">></span>
 	</button>
 </div>
 <div class="row justify-content-center">
